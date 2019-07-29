@@ -1,4 +1,76 @@
 /*Shishir Agarwal*/
+
+--
+-- Table structure for table `tbl_que_master`
+--
+
+CREATE TABLE `tbl_que_master` (
+  `qmid` int(11) NOT NULL,
+  `qid` int(11) NOT NULL,
+  `que_name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `answer1` text COLLATE utf8_bin NOT NULL,
+  `answer2` text COLLATE utf8_bin NOT NULL,
+  `answer3` text COLLATE utf8_bin NOT NULL,
+  `answer4` text COLLATE utf8_bin NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `createdon` datetime NOT NULL,
+  `updatedon` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_que_type`
+--
+
+CREATE TABLE `tbl_que_type` (
+  `qid` int(18) NOT NULL,
+  `que_type` varchar(255) COLLATE utf8_bin NOT NULL,
+  `status` tinyint(1) NOT NULL,
+  `createdon` datetime NOT NULL,
+  `updatedon` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_que_master`
+--
+ALTER TABLE `tbl_que_master`
+  ADD PRIMARY KEY (`qmid`);
+
+--
+-- Indexes for table `tbl_que_type`
+--
+ALTER TABLE `tbl_que_type`
+  ADD PRIMARY KEY (`qid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_que_master`
+--
+ALTER TABLE `tbl_que_master`
+  MODIFY `qmid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_que_type`
+--
+ALTER TABLE `tbl_que_type`
+  MODIFY `qid` int(18) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
+
+
+
+
+
+
 DELIMITER $$
 
 CREATE PROCEDURE selectQtype()
